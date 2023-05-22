@@ -1,0 +1,193 @@
+/*---- NO MODIFICAR ESTA ES EL AREA DE TRABAJO O PLANTILLA*/
+/*Vistas para Movil*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 3px;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+    display: flex;
+}
+
+.grid-container >*{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu{
+    grid-area:menu;
+    background-color: blanchedalmond;
+    width: 100%;    
+    clear: both;    
+    content: "";    
+    display: table; 
+}
+
+.imagen{
+    object-fit: cover;
+    grid-area:imagen;
+    background-color: white;
+    width: 100%;    
+    height: 100%;
+    margin: auto;  
+}
+
+.submenu{
+    grid-area: submenu;
+    background-color: burlywood;
+}
+
+.submenu button{
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px 
+}
+
+.submenu button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+img{    
+  width:100%;
+  height:100%   
+}
+
+.contenido{
+    grid-area: contenido;
+    background-color: salmon;
+    object-fit: cover;
+    text-align: justify;
+    text-decoration: none;
+}
+
+.contenido h1{
+    text-align: center;
+}
+
+.piepagina{
+    grid-area: piepagina;
+    background-color: coral;
+    margin-top: auto;
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "menu" 50px
+    "imagen" 70px
+    "submenu" 100px
+    "contenido" auto
+    "piepagina" 50px;
+    
+}
+/*Vista para tablet lo define el min-width 600px*/
+
+@media (min-width: 600px){
+    .grid-container{
+
+        grid-template:
+        "menu       menu"       50px
+        "imagen     imagen"     auto
+        "submenu    contenido"  300px     
+        "piepagina  piepagina"  80px /
+        200px auto;             
+    }
+    .imagen{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*Vista de escritorio lo define el min-width 900px*/
+
+@media (min-width: 900px){
+    .grid-container{
+
+        grid-template:
+        "menu       menu"       50px
+        "imagen     imagen"     auto
+        "submenu    contenido"  500px     
+        "piepagina  piepagina"  80px /
+        200px auto;     
+    }
+}
+/*---- FIN DEL AREA DE TRABAJO O PLANTILLA*/
+
+nav{
+    float:left;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 250px;
+    padding: 1.5;   
+    float: left;    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;  
+    position: relative;  
+}
+
+nav ul li a::before{
+    display: block;
+    content: "";
+    width: 0%;
+    background: darkblue;
+    height: 5px;
+    top: 0;
+    position: absolute;
+    transition: width 0.5s;
+}
+
+nav ul li a:hover:before{
+width: 100%;
+}
+
+.buttons{
+    min-width: 700px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons a {
+    text-decoration: none;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align:center;
+    background: #314652;
+    color: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    transition: all .4s ease-in-out;    
+  }
+  
+  .buttons a:hover {
+    transform: scale(1.2);
+  }
+  
+  .warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: blue;
+    padding-top: 20px;
+  }

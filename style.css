@@ -1,0 +1,271 @@
+/*---- NO MODIFICAR ESTA ES EL AREA DE TRABAJO O PLANTILLA*/
+/*Vistas para Movil*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 3px;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+    display: flex;
+}
+
+.grid-container >*{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu{
+    grid-area:menu;
+    background-color: #F9F91D;
+    width: 100%;    
+    clear: both;    
+    content: "";    
+    display: table; 
+}
+
+.imagen{
+    object-fit: cover;
+    grid-area:imagen;
+    background-color: white;
+    width: 100%;    
+    height: 100%;
+    margin: auto;  
+}
+
+img{    
+  width:100%;
+  height:100%   
+}
+
+.contenido{
+    grid-area: contenido;
+    background-color: #A5E218;
+    object-fit: cover;
+    text-align: center;
+    align-items: center;
+   
+}
+
+.piepagina{
+    grid-area: piepagina;
+    background-color: coral;
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "menu" 50px
+    "imagen" 70px    
+    "contenido" auto
+    "piepagina" 50px;
+    
+}
+/*Vista para tablet lo define el min-width 600px*/
+
+@media (min-width: 600px){
+    .grid-container{
+        grid-template:
+        "menu       menu"       50px
+        "imagen     imagen"     auto
+        "contenido contenido"    auto
+        "piepagina  piepagina"  80px /
+        200px auto;             
+    }
+    .imagen{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*Vista de escritorio lo define el min-width 900px*/
+
+@media (min-width: 900px){
+    .grid-container{
+
+        grid-template:
+        "menu       menu"       50px
+        "imagen     imagen"     auto
+        "contenudo    contenido"  auto     
+        "piepagina  piepagina"  80px /
+        0.0000001px auto;
+             
+    }
+}
+/*---- FIN DEL AREA DE TRABAJO O PLANTILLA*/
+
+nav{
+    float:left;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 250px;
+    padding: 1.5;   
+    float: left;    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;  
+    position: relative;  
+}
+
+nav ul li a::before{
+    display: block;
+    content: "";
+    width: 0%;
+    background: darkblue;
+    height: 5px;
+    top: 0;
+    position: absolute;
+    transition: width 0.5s;
+}
+
+nav ul li a:hover:before{
+width: 100%;
+}
+
+.buttons{
+    min-width: 700px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons a {
+    text-decoration: none;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align:center;
+    background: #314652;
+    color: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    transition: all .4s ease-in-out;    
+  }
+  
+  .buttons a:hover {
+    transform: scale(1.2);
+  }
+  
+  h1 {
+    font: bold 32px Times;
+    color: #666;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#main-container{
+    background-color: white;
+    margin: 100px auto;
+    width: 800px;
+}
+
+.table{
+    background-color: white;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td{
+    border: solid 1px black;
+    padding: 20px;
+}
+
+thead{
+    background-color: #246355;
+    border-bottom: solid 5px #0f362d;
+    color: white;
+}
+tr:nth-child(even){
+    background-color:  #ddd;
+}
+
+tr:hover td{
+    background-color: #369681;
+    color: white;
+}
+video{
+    text-align: center;
+}
+
+.form_top{
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0.1rem;
+    border-top: solid 0.4rem #f39b53;
+}
+
+.form_top h2{
+font-weight: bold;
+color: #cac8c8;
+font-size: 18px;
+}
+
+h2 span{
+    color: blueviolet;
+}
+
+.form_registro{
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+btn_form{
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+input, .btn_submit, .btn_reset{
+    background-color: #EFEFEF;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-bottom: solid #c8c8c8 0.2rem;
+    transition: all 0.5s;
+}
+
+button, submit, .reset{
+    background-color: hsl(126, 81%, 59%);
+    padding: 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-bottom: solid #c8c8c8 0.2rem;
+    transition: all 0.5s;
+}
+.input:focus{
+    border-bottom: solid #f36b53;
+}
+
+.btn_submit, .btn_reset{
+    width: 40%;
+    border-bottom: none;
+    background-color: #31b1e5;
+    color: white;
+}
+
+.btn_reset{
+    background-color: #eda135;
+    
+}
+
+.btn_reset:hover{
+    background-color: #fa9535;
+}
